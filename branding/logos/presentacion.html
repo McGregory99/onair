@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>OnAir Logo Proposals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f3ef;
+    --ink: #141414;
+    --muted: #6b6a66;
+    --line: #d9d7d0;
+    --plate: #ffffff;
+    --accent: #e5242b;
+    --gutter-l: max(16px, env(safe-area-inset-left));
+    --gutter-r: max(16px, env(safe-area-inset-right));
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121212; --ink: #f1efe9; --muted: #9a978f; --line: #2c2b29; --plate: #ffffff; --accent: #ff3b42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121212; --ink: #f1efe9; --muted: #9a978f; --line: #2c2b29; --plate: #ffffff; --accent: #ff3b42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 var(--gutter-r) 96px var(--gutter-l); }
+  @media (min-width: 720px) { .wrap { padding-left: max(40px, env(safe-area-inset-left)); padding-right: max(40px, env(safe-area-inset-right)); } }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  header.top { display: flex; justify-content: space-between; gap: 16px; padding: 28px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .hero { padding: 72px 0 56px; border-bottom: 1px solid var(--line); }
+  .hero h1 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: clamp(48px, 9vw, 112px); line-height: .95; margin: 16px 0 28px; letter-spacing: -.01em; }
+  .hero h1 em { color: var(--accent); }
+  .hero p { max-width: 640px; font-size: 18px; margin: 0; }
+  .brief { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+  .brief div p { margin: 6px 0 0; font-size: 15px; }
+  section.prop { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  .prop-head { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 32px; }
+  @media (min-width: 860px) { .prop-head { grid-template-columns: 160px 1fr 1fr; align-items: start; } }
+  .num { font-family: "Instrument Serif", serif; font-size: 96px; line-height: .8; color: var(--accent); }
+  .prop h2 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 44px; line-height: 1; margin: 0 0 12px; }
+  .prop .lead { margin: 0; font-size: 17px; }
+  dl { margin: 0; display: grid; gap: 14px; }
+  dt { margin-bottom: 2px; }
+  dd { margin: 0; font-size: 15px; }
+  .plates { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 860px) { .plates { grid-template-columns: 5fr 7fr; } }
+  .plate { background: var(--plate); border-radius: 4px; overflow: hidden; position: relative; border: 1px solid var(--line); }
+  .plate img { display: block; width: 100%; height: auto; }
+  .plate .tag { position: absolute; left: 14px; top: 12px; }
+  .plate.lockup { display: flex; align-items: center; }
+  .plate.lockup.tall img { max-width: 70%; margin: 0 auto; }
+  .sizes { margin-top: 16px; background: var(--plate); border: 1px solid var(--line); border-radius: 4px; padding: 20px; display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
+  .sizes figure { margin: 0; display: grid; justify-items: center; gap: 8px; }
+  .sizes figcaption { font-family: "JetBrains Mono", monospace; font-size: 11px; color: #8a8882; }
+  .sizes img { display: block; image-rendering: auto; }
+  .compare { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+  @media (min-width: 720px) { .compare { grid-template-columns: repeat(4, 1fr); } }
+  .compare a { text-decoration: none; color: inherit; }
+  .compare .plate { padding: 24px; display: grid; justify-items: center; gap: 12px; }
+  .compare .plate img { width: 96px; }
+  .compare .plate span { font-family: "JetBrains Mono", monospace; font-size: 12px; color: #6b6a66; }
+  .reco { padding: 72px 0 0; }
+  .reco h2 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: clamp(36px, 6vw, 64px); line-height: 1; margin: 12px 0 24px; }
+  .reco p { max-width: 720px; font-size: 17px; }
+  .reco ol { max-width: 720px; padding-left: 20px; }
+  .reco li { margin-bottom: 8px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="mono">OnAir — Identidad visual</span>
+    <span class="mono">Ronda 1 · 4 propuestas · Nov 2026</span>
+  </header>
+
+  <div class="hero">
+    <span class="mono">Presentación de propuestas</span>
+    <h1>Un punto rojo<br>que te <em>mira</em>.</h1>
+    <p>Partimos del encargo: el piloto de grabación como símbolo, un rojo sobre blanco con algo del ojo de HAL 9000, y el nombre «ON AIR» al lado o pequeño en blanco sobre caja roja. Las cuatro rutas comparten color y forma base; cambian en cuánta personalidad cargan y en cómo aguantan a tamaño pequeño.</p>
+    <div class="brief">
+      <div><span class="mono">Símbolo</span><p>Punto rojo de «rec», sobre blanco.</p></div>
+      <div><span class="mono">Referencia</span><p>HAL 9000, <i>2001: Una odisea del espacio</i>.</p></div>
+      <div><span class="mono">Nombre</span><p>«ON AIR» al lado, o pequeño en blanco sobre rojo.</p></div>
+      <div><span class="mono">Rojo base</span><p>#E5242B — un único rojo para las cuatro rutas.</p></div>
+    </div>
+  </div>
+
+  <section class="prop" id="p1">
+    <div class="prop-head">
+      <div class="num">01</div>
+      <div>
+        <span class="mono">Ruta cinematográfica</span>
+        <h2>Lente</h2>
+        <p class="lead">La cita directa a HAL: un ojo rojo con núcleo incandescente, bisel oscuro y aro metálico. No dice «grabar», dice «alguien está mirando». El nombre va al lado, negro y sólido, para que el ojo sea el único elemento con brillo.</p>
+      </div>
+      <dl>
+        <div><dt class="mono">Fuerza</dt><dd>La más memorable. Cuenta una historia y tiene tono propio.</dd></div>
+        <div><dt class="mono">Riesgo</dt><dd>Los degradados se empastan por debajo de 32 px. Necesita una versión plana para favicon y barra de menús.</dd></div>
+      </dl>
+    </div>
+    <div class="plates">
+      <div class="plate"><span class="tag mono">Símbolo</span><img src="png/a-lens.png" alt="Propuesta 01: ojo rojo estilo HAL 9000 con bisel oscuro y aro metálico"></div>
+      <div class="plate lockup"><img src="png/a-lens-lockup.png" alt="Propuesta 01 con el nombre ON AIR en negro al lado"></div>
+    </div>
+    <div class="sizes">
+      <figure><img src="png/a-lens.png" width="128" height="128" alt=""><figcaption>128</figcaption></figure>
+      <figure><img src="png/a-lens.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+      <figure><img src="png/a-lens.png" width="32" height="32" alt=""><figcaption>32</figcaption></figure>
+      <figure><img src="png/a-lens.png" width="16" height="16" alt=""><figcaption>16</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="prop" id="p2">
+    <div class="prop-head">
+      <div class="num">02</div>
+      <div>
+        <span class="mono">Ruta esencial</span>
+        <h2>Rec</h2>
+        <p class="lead">El punto rojo de grabar y nada más. Toda la marca descansa en un círculo plano de un solo color. El nombre se convierte en el cartel luminoso de un estudio de radio: caja roja, punto y letras en blanco, el símbolo invertido.</p>
+      </div>
+      <dl>
+        <div><dt class="mono">Fuerza</dt><dd>Funciona a cualquier tamaño y en un solo color. Es la más fácil de aplicar: app, web, miniaturas, pegatinas.</dd></div>
+        <div><dt class="mono">Riesgo</dt><dd>Es la más genérica. El punto rojo es de todos; la marca depende del cartel «ON AIR» para ser reconocible.</dd></div>
+      </dl>
+    </div>
+    <div class="plates">
+      <div class="plate"><span class="tag mono">Símbolo</span><img src="png/b-rec.png" alt="Propuesta 02: círculo rojo plano sobre blanco"></div>
+      <div class="plate lockup"><img src="png/b-rec-lockup.png" alt="Propuesta 02: cartel rojo con punto blanco y ON AIR en blanco"></div>
+    </div>
+    <div class="sizes">
+      <figure><img src="png/b-rec.png" width="128" height="128" alt=""><figcaption>128</figcaption></figure>
+      <figure><img src="png/b-rec.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+      <figure><img src="png/b-rec.png" width="32" height="32" alt=""><figcaption>32</figcaption></figure>
+      <figure><img src="png/b-rec.png" width="16" height="16" alt=""><figcaption>16</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="prop" id="p3">
+    <div class="prop-head">
+      <div class="num">03</div>
+      <div>
+        <span class="mono">Ruta producto</span>
+        <h2>Tally</h2>
+        <p class="lead">Pensada desde el Dock de macOS. Un icono blanco con el punto rojo rodeado de un anillo fino, como el botón de obturador o la luz «tally» que se enciende en una cámara cuando estás en directo. Debajo, el nombre pequeño en blanco sobre caja roja.</p>
+      </div>
+      <dl>
+        <div><dt class="mono">Fuerza</dt><dd>Se siente nativa en Mac desde el primer día. El anillo da el gesto de «botón» que invita a pulsar.</dd></div>
+        <div><dt class="mono">Riesgo</dt><dd>El anillo desaparece a 16 px; en tamaños pequeños queda solo el punto, como en la 02.</dd></div>
+      </dl>
+    </div>
+    <div class="plates">
+      <div class="plate"><span class="tag mono">Icono de app</span><img src="png/c-tally.png" alt="Propuesta 03: icono de app blanco con punto rojo y anillo rojo"></div>
+      <div class="plate lockup tall"><img src="png/c-tally-lockup.png" alt="Propuesta 03: icono con etiqueta ON AIR pequeña en blanco sobre rojo debajo"></div>
+    </div>
+    <div class="sizes">
+      <figure><img src="png/c-tally.png" width="128" height="128" alt=""><figcaption>128</figcaption></figure>
+      <figure><img src="png/c-tally.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+      <figure><img src="png/c-tally.png" width="32" height="32" alt=""><figcaption>32</figcaption></figure>
+      <figure><img src="png/c-tally.png" width="16" height="16" alt=""><figcaption>16</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="prop" id="p4">
+    <div class="prop-head">
+      <div class="num">04</div>
+      <div>
+        <span class="mono">Ruta emisión</span>
+        <h2>Señal</h2>
+        <p class="lead">El punto deja de grabar y empieza a emitir: tres ondas a cada lado que se desvanecen. En el nombre, «ON» en negro y «AIR» encendido en la caja roja, como un rótulo que se activa.</p>
+      </div>
+      <dl>
+        <div><dt class="mono">Fuerza</dt><dd>Es la única que dice «directo» y no solo «grabar». La más clara para quien no conoce el producto.</dd></div>
+        <div><dt class="mono">Riesgo</dt><dd>Las ondas están muy vistas (podcasts, wifi, AirDrop). Es la menos propia de las cuatro.</dd></div>
+      </dl>
+    </div>
+    <div class="plates">
+      <div class="plate"><span class="tag mono">Símbolo</span><img src="png/d-signal.png" alt="Propuesta 04: punto rojo con ondas de emisión a ambos lados"></div>
+      <div class="plate lockup"><img src="png/d-signal-lockup.png" alt="Propuesta 04: ON en negro y AIR en blanco sobre caja roja"></div>
+    </div>
+    <div class="sizes">
+      <figure><img src="png/d-signal.png" width="128" height="128" alt=""><figcaption>128</figcaption></figure>
+      <figure><img src="png/d-signal.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+      <figure><img src="png/d-signal.png" width="32" height="32" alt=""><figcaption>32</figcaption></figure>
+      <figure><img src="png/d-signal.png" width="16" height="16" alt=""><figcaption>16</figcaption></figure>
+    </div>
+  </section>
+
+  <div class="reco">
+    <span class="mono">Las cuatro, lado a lado</span>
+    <div class="compare">
+      <a href="#p1"><div class="plate"><img src="png/a-lens.png" alt="01 Lente"><span>01 Lente</span></div></a>
+      <a href="#p2"><div class="plate"><img src="png/b-rec.png" alt="02 Rec"><span>02 Rec</span></div></a>
+      <a href="#p3"><div class="plate"><img src="png/c-tally.png" alt="03 Tally"><span>03 Tally</span></div></a>
+      <a href="#p4"><div class="plate"><img src="png/d-signal.png" alt="04 Señal"><span>04 Señal</span></div></a>
+    </div>
+
+    <h2 style="margin-top:72px">Nuestra recomendación</h2>
+    <p>Si hubiera que elegir hoy, iríamos con <strong>01 Lente</strong> como símbolo, porque es la única que recoge de verdad la referencia a HAL y se recuerda. Sus problemas a tamaño pequeño tienen solución si se combina con otras rutas:</p>
+    <ol>
+      <li><strong>Icono de app y lockup grande:</strong> el ojo de la 01.</li>
+      <li><strong>Favicon, barra de menús y 16–32 px:</strong> se reduce al punto plano de la 02. Es el mismo rojo y la misma forma, así que se lee como la misma marca.</li>
+      <li><strong>Nombre:</strong> el cartel de la 02, con letras blancas sobre rojo, para miniaturas de YouTube y cabeceras.</li>
+    </ol>
+    <p>Para la siguiente ronda: elegir una ruta (o la combinación) y la tipografía definitiva del nombre.</p>
+  </div>
+
+  <footer>
+    <span class="mono">Hecho en SVG, renderizado a PNG</span>
+    <span class="mono">branding/logos/</span>
+  </footer>
+</div>
+</body>
+</html>

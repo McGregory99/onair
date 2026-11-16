@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" width="1600" height="560">
+  <rect width="1600" height="560" fill="#ffffff"/>
+  <g transform="translate(40 60) scale(0.859)">
+    <g fill="none" stroke="#e5242b" stroke-width="22" stroke-linecap="round">
+      <path d="M347.9 178.8 A120 120 0 0 1 347.9 333.2"/>
+      <path d="M164.1 178.8 A120 120 0 0 0 164.1 333.2"/>
+      <path d="M390.1 143.5 A175 175 0 0 1 390.1 368.5" opacity=".5"/>
+      <path d="M121.9 143.5 A175 175 0 0 0 121.9 368.5" opacity=".5"/>
+      <path d="M432.2 108.2 A230 230 0 0 1 432.2 403.8" opacity=".2"/>
+      <path d="M79.8 108.2 A230 230 0 0 0 79.8 403.8" opacity=".2"/>
+    </g>
+    <circle cx="256" cy="256" r="72" fill="#e5242b"/>
+  </g>
+  <text x="560" y="280" dominant-baseline="central" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="190" fill="#111113" textLength="300" lengthAdjust="spacing">ON</text>
+  <rect x="900" y="170" width="520" height="220" rx="22" fill="#e5242b"/>
+  <text x="960" y="280" dominant-baseline="central" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="170" fill="#ffffff" textLength="400" lengthAdjust="spacing">AIR</text>
+</svg>
