@@ -14,12 +14,12 @@ Plan: `~/.claude/plans/clever-yawning-dongarra.md`.
 ## Tasks
 | ID | Specs | Route | Status | Commit |
 |----|-------|-------|--------|--------|
-| T1 | — | inline | pending | |
-| T2 | S3, S4, S6 | inline | pending | |
-| T3 | S2 | inline | pending | |
-| T4 | S3, S4 | inline | pending | |
-| T5 | S1, S5 | inline | pending | |
-| T6 | S6 | inline | pending | |
+| T1 | — | inline | done | e408b47 |
+| T2 | S3, S4, S6 | inline | done (27 tests green) | 9c2eb4b, 85f67e0 |
+| T3 | S2 | inline | code done; manual check pending | e408b47 |
+| T4 | S3, S4 | inline | code done; manual check pending | e408b47 |
+| T5 | S1, S5 | inline | code done; manual check pending | e408b47 |
+| T6 | S6 | inline | code done; manual check pending | e408b47 |
 
 - T1 Package skeleton, app bundle script, entitlements/Info.plist.
 - T2 Domain: `Layout`, `LayoutGeometry`, `SessionState`, `StreamDestination` (test-first).
@@ -33,3 +33,5 @@ Plan: `~/.claude/plans/clever-yawning-dongarra.md`.
 - **L2** (2026-11-16) Requirements from plan-mode Q&A: features "Multistreaming, Pantalla y layouts"; audience "Primero yo, luego otros"; platforms "YouTube"; multistreaming "Fuera de la v1 (Recomendado)"; extras "Audio del sistema, Ensayo antes de emitir". App name: "me gusta onair".
 - **L3** Stack: native Swift + HaishinKit 2.3.0 (Electron rejected: electron/electron#52738 silent system-audio failure with custom picker). Built as a SwiftPM package (no xcodegen installed) + script that assembles the `.app` bundle. No code-signing identity on this Mac: ad-hoc signing, so macOS may re-ask permissions after rebuilds.
 - **L4** Deviation from plan: spikes S-a/S-b/S-c are folded into T3–T5 (greenfield, so a throwaway spike costs the same as the real adapter). Stop-and-replan rule still applies if system audio or side-by-side fails.
+- **L5** (2026-11-16) Implemented T1–T6. HaishinKit always draws its main video track full-frame, so the mixer's main track points at an unused track (9) and the camera and screen are two `VideoScreenObject` layers positioned from `LayoutGeometry`. The domain type was renamed `Layout` → `StreamLayout` because it clashed with SwiftUI's `Layout`. Checks: `swift test` passes 27 tests; `scripts/build-app.sh debug` builds and signs the app; the app launches without crashing. Still pending: the manual end-to-end checklist from the plan (needs the user's camera, screen and a YouTube stream key), including whether the layout y-axis comes out the right way up. Risk: item 6 — no automated test covers the capture, compositing and RTMP adapters.
+- **L6** Engram mirror pending: the Engram server resolves to the parent DEVELOPMENT folder (ambiguous project, and `onair` is not offered), so the write was refused. Resync once the project resolves.
