@@ -10,6 +10,8 @@ final class FakeEngine: BroadcastEngine {
     var startPreviewError: EngineError?
     var startBroadcastError: EngineError?
     var onDisconnect: (@Sendable (String) -> Void)?
+    /// Runs while startBroadcast is "connecting", to simulate user actions mid-connection.
+    var duringConnect: (() async -> Void)?
 
     func startPreview() async throws {
         if let startPreviewError { throw startPreviewError }
@@ -23,6 +25,7 @@ final class FakeEngine: BroadcastEngine {
     func startBroadcast(to destinations: [StreamDestination], onDisconnect: @escaping @Sendable (String) -> Void) async throws {
         broadcastDestinations.append(destinations)
         self.onDisconnect = onDisconnect
+        if let duringConnect { await duringConnect() }
         if let startBroadcastError { throw startBroadcastError }
     }
 
@@ -129,6 +132,18 @@ struct SessionControllerTests {
         engine.onDisconnect?("Connection to YouTube lost.")
         await controller.waitForPendingEvents()
         #expect(controller.state == .failed("Connection to YouTube lost."))
+        #expect(engine.stopBroadcastCalls == 1)
+    }
+
+    @Test("cancelling while connecting never leaves the stream publishing")
+    func cancelDuringConnect() async {
+        let controller = await rehearsing()
+        controller.streamKey = "key"
+        engine.duringConnect = { await controller.endStream() }
+        await controller.goLive()
+        #expect(controller.state == .rehearsing)
+        // Once for the cancel, once more after the late connection succeeded.
+        #expect(engine.stopBroadcastCalls == 2)
     }
 
     @Test("ending the stream stops the broadcast but keeps the preview")

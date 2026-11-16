@@ -15,6 +15,7 @@ public final class SessionController {
     public let canvas: CanvasSize
     private let engine: BroadcastEngine
     private let keyStore: StreamKeyStore
+    private var cleanup: Task<Void, Never>?
 
     public init(engine: BroadcastEngine, keyStore: StreamKeyStore, canvas: CanvasSize = .fullHD, layout: StreamLayout = .pictureInPicture) {
         self.engine = engine
@@ -59,6 +60,11 @@ public final class SessionController {
         }
         do {
             try await engine.startBroadcast(to: [destination], onDisconnect: onDisconnect)
+            guard state == .connecting else {
+                // Cancelled or failed while connecting: make sure nothing keeps publishing.
+                await engine.stopBroadcast()
+                return
+            }
             transition(.connected)
         } catch {
             await engine.stopBroadcast()
@@ -79,12 +85,15 @@ public final class SessionController {
     }
 
     func connectionLost(_ reason: String) {
+        guard state.locksSettings else { return }
         transition(.failed(reason))
+        cleanup = Task { await engine.stopBroadcast() }
     }
 
-    /// Test hook: lets queued main-actor events (like a disconnect) run.
+    /// Test hook: lets queued main-actor events (like a disconnect) and their cleanup run.
     func waitForPendingEvents() async {
         await Task { @MainActor in }.value
+        await cleanup?.value
     }
 
     /// Applies an event; events that are not valid in the current state are ignored
