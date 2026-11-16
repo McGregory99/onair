@@ -5,7 +5,7 @@ public enum VideoSource: Sendable, Hashable {
 }
 
 /// One-click scene layouts offered to the streamer, in button order.
-public enum Layout: String, Sendable, CaseIterable, Identifiable {
+public enum StreamLayout: String, Sendable, CaseIterable, Identifiable {
     case cameraOnly
     case screenOnly
     case pictureInPicture

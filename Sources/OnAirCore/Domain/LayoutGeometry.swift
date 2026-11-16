@@ -7,7 +7,7 @@ public enum LayoutGeometry {
     /// Picture-in-picture margin as a fraction of the canvas height (rounded to whole pixels).
     static let pipMarginFraction = 0.04
 
-    public static func placements(for layout: Layout, canvas: CanvasSize) -> [Placement] {
+    public static func placements(for layout: StreamLayout, canvas: CanvasSize) -> [Placement] {
         let full = Frame(x: 0, y: 0, width: canvas.width, height: canvas.height)
         switch layout {
         case .cameraOnly:

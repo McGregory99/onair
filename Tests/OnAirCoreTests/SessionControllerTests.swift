@@ -45,7 +45,7 @@ struct SessionControllerTests {
     let engine = FakeEngine()
     let keys = MemoryKeyStore()
 
-    func makeController(layout: Layout = .pictureInPicture) -> SessionController {
+    func makeController(layout: StreamLayout = .pictureInPicture) -> SessionController {
         SessionController(engine: engine, keyStore: keys, canvas: .fullHD, layout: layout)
     }
 
@@ -72,8 +72,8 @@ struct SessionControllerTests {
         #expect(controller.errorMessage == "Camera access denied. Allow OnAir in System Settings › Privacy & Security › Camera.")
     }
 
-    @Test("selecting a layout applies its placements immediately", arguments: Layout.allCases)
-    func selectLayout(layout: Layout) async {
+    @Test("selecting a layout applies its placements immediately", arguments: StreamLayout.allCases)
+    func selectLayout(layout: StreamLayout) async {
         let controller = await rehearsing()
         await controller.select(layout)
         #expect(controller.layout == layout)

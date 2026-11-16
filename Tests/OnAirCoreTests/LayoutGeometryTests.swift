@@ -42,8 +42,8 @@ struct LayoutGeometryTests {
         ])
     }
 
-    @Test("every layout keeps all frames inside the canvas", arguments: Layout.allCases)
-    func framesInsideCanvas(layout: Layout) {
+    @Test("every layout keeps all frames inside the canvas", arguments: StreamLayout.allCases)
+    func framesInsideCanvas(layout: StreamLayout) {
         for placement in LayoutGeometry.placements(for: layout, canvas: canvas) {
             #expect(placement.frame.x >= 0 && placement.frame.y >= 0)
             #expect(placement.frame.maxX <= canvas.width && placement.frame.maxY <= canvas.height)
@@ -59,6 +59,6 @@ struct LayoutGeometryTests {
 
     @Test("all four layouts are offered, in button order")
     func layoutOrder() {
-        #expect(Layout.allCases == [.cameraOnly, .screenOnly, .pictureInPicture, .sideBySide])
+        #expect(StreamLayout.allCases == [.cameraOnly, .screenOnly, .pictureInPicture, .sideBySide])
     }
 }

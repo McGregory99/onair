@@ -7,7 +7,7 @@ import Observation
 @Observable
 public final class SessionController {
     public private(set) var state: SessionState = .idle
-    public private(set) var layout: Layout
+    public private(set) var layout: StreamLayout
     public var streamKey: String
     /// Message to show the streamer; cleared when an action succeeds.
     public var errorMessage: String?
@@ -16,7 +16,7 @@ public final class SessionController {
     private let engine: BroadcastEngine
     private let keyStore: StreamKeyStore
 
-    public init(engine: BroadcastEngine, keyStore: StreamKeyStore, canvas: CanvasSize = .fullHD, layout: Layout = .pictureInPicture) {
+    public init(engine: BroadcastEngine, keyStore: StreamKeyStore, canvas: CanvasSize = .fullHD, layout: StreamLayout = .pictureInPicture) {
         self.engine = engine
         self.keyStore = keyStore
         self.canvas = canvas
@@ -36,7 +36,7 @@ public final class SessionController {
         await engine.apply(LayoutGeometry.placements(for: layout, canvas: canvas))
     }
 
-    public func select(_ layout: Layout) async {
+    public func select(_ layout: StreamLayout) async {
         self.layout = layout
         await engine.apply(LayoutGeometry.placements(for: layout, canvas: canvas))
     }
