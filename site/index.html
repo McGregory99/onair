@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OnAir — Go live on YouTube from your Mac</title>
+  <meta name="description" content="OnAir streams your camera, screen and Mac's sound to YouTube with one-click layouts and a rehearsal before you go live. A simple, free Mac app.">
+  <meta property="og:title" content="OnAir — Go live on YouTube from your Mac">
+  <meta property="og:description" content="Camera, screen and system audio, four one-click layouts and a rehearsal before you go live. A simple, free Mac app.">
+  <meta property="og:image" content="media/studio.png">
+  <link rel="icon" href="media/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700;750&display=swap">
+  <link rel="stylesheet" href="styles.css?v=__V__">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="OnAir home">
+        <img src="media/logo.svg" width="28" height="28" alt="">
+        <span>OnAir</span>
+        <span class="beta" data-i18n="nav.preview">Preview</span>
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#layouts" data-i18n="nav.layouts">Layouts</a>
+        <a href="#rehearse" data-i18n="nav.rehearse">Rehearsal</a>
+        <a href="#sources" data-i18n="nav.sources">Sources</a>
+        <a href="#compare" data-i18n="nav.cmp">Compare</a>
+        <a href="#feedback" data-i18n="nav.feedback">Feedback</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / Idioma">
+        <button type="button" data-lang="es" lang="es" aria-pressed="false" aria-label="Español" title="Español">
+          <svg class="flag" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+            <clipPath id="flag-es"><circle cx="11" cy="11" r="11"/></clipPath>
+            <g clip-path="url(#flag-es)"><rect width="22" height="22" fill="#c60b1e"/><rect y="5.5" width="22" height="11" fill="#ffc400"/></g>
+          </svg>
+        </button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="true" aria-label="English" title="English">
+          <svg class="flag" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+            <clipPath id="flag-en"><circle cx="11" cy="11" r="11"/></clipPath>
+            <g clip-path="url(#flag-en)">
+              <rect width="22" height="22" fill="#012169"/>
+              <path d="M0 0L22 22M22 0L0 22" stroke="#fff" stroke-width="4.4"/>
+              <path d="M0 0L22 22M22 0L0 22" stroke="#c8102e" stroke-width="1.6"/>
+              <path d="M11 0V22M0 11H22" stroke="#fff" stroke-width="6.6"/>
+              <path d="M11 0V22M0 11H22" stroke="#c8102e" stroke-width="3.8"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <a class="btn btn--dark btn--small" href="https://github.com/McGregory99/onair">
+        <svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Early preview · for Macs on macOS 14 or later</p>
+        <h1 class="display" data-i18n="hero.title">Go live on YouTube.<br>Straight from your Mac.</h1>
+        <p class="lede" data-i18n="hero.lede">OnAir puts your camera, your screen and your Mac’s sound into one stream and sends it to YouTube. Pick a layout, rehearse, press Go live. No subscription, and none of the knobs.</p>
+        <div class="cta">
+          <a class="btn btn--dark" href="https://github.com/McGregory99/onair#build-it" data-i18n="hero.get">Get OnAir</a>
+          <a class="btn btn--line" href="#layouts" data-i18n="hero.see">See what it does</a>
+        </div>
+        <a class="textlink" href="https://github.com/McGregory99/onair" data-i18n="hero.source">Read the source on GitHub <span aria-hidden="true">→</span></a>
+
+        <div class="stage">
+          <img class="stage__app" src="media/studio.png" width="1600" height="848" alt="OnAir live: a slide with the camera in the bottom-right corner, the four layout buttons, sources and the End stream button" data-i18n-alt="alt.hero">
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--soft" id="layouts">
+      <div class="wrap center">
+        <p class="eyebrow" data-i18n="nav.layouts">Layouts</p>
+        <h2 class="display display--md" data-i18n="lay.title">Four layouts.<br>One click each.</h2>
+        <p class="lede lede--narrow" data-i18n="lay.lede">No scenes to build. Switch between them while you rehearse or while you are live, and the stream follows.</p>
+        <div class="layouts">
+          <article class="layout">
+            <svg viewBox="0 0 160 90" aria-hidden="true"><rect class="frame" x=".5" y=".5" width="159" height="89" rx="6"/><rect class="cam" x="6" y="6" width="148" height="78" rx="3"/><circle cx="80" cy="38" r="11" fill="#fff" opacity=".9"/><path d="M58 84c2-14 11-21 22-21s20 7 22 21z" fill="#fff" opacity=".9"/></svg>
+            <h3 data-i18n="lay.cam.h">Camera</h3>
+            <p data-i18n="lay.cam.p">Just you, full frame. For the intro, the Q&amp;A and the goodbye.</p>
+          </article>
+          <article class="layout">
+            <svg viewBox="0 0 160 90" aria-hidden="true"><rect class="frame" x=".5" y=".5" width="159" height="89" rx="6"/><rect class="scr" x="6" y="6" width="148" height="78" rx="3"/></svg>
+            <h3 data-i18n="lay.scr.h">Screen</h3>
+            <p data-i18n="lay.scr.p">A whole display or a single window, full frame. Share one window and only that window shows.</p>
+          </article>
+          <article class="layout">
+            <svg viewBox="0 0 160 90" aria-hidden="true"><rect class="frame" x=".5" y=".5" width="159" height="89" rx="6"/><rect class="scr" x="6" y="6" width="148" height="78" rx="3"/><rect class="cam" x="113" y="59" width="37" height="21" rx="2"/></svg>
+            <h3 data-i18n="lay.pip.h">Screen + camera</h3>
+            <p data-i18n="lay.pip.p">Your screen, with your camera in the bottom-right corner. The classic for demos and classes.</p>
+          </article>
+          <article class="layout">
+            <svg viewBox="0 0 160 90" aria-hidden="true"><rect class="frame" x=".5" y=".5" width="159" height="89" rx="6"/><rect class="scr" x="6" y="25" width="72" height="40.5" rx="2"/><rect class="cam" x="82" y="25" width="72" height="40.5" rx="2"/></svg>
+            <h3 data-i18n="lay.sbs.h">Side by side</h3>
+            <p data-i18n="lay.sbs.p">Screen on the left, camera on the right, the same size. When you matter as much as the slides.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="rehearse">
+      <div class="wrap">
+        <div class="split split--top">
+          <div>
+            <p class="eyebrow" data-i18n="nav.rehearse">Rehearsal</p>
+            <h2 class="display display--md" data-i18n="reh.title">Rehearse first.<br>Then go live.</h2>
+          </div>
+          <p class="lede lede--side" data-i18n="reh.lede">Before anyone sees anything, OnAir shows you exactly what YouTube will get. Check the framing, the sound and the layouts, then go live from the same window.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="pill">REHEARSAL</span>
+            <h3 data-i18n="reh.1.h">Start rehearsal.</h3>
+            <p data-i18n="reh.1.p">Your camera, microphone and shared screen come up in a live preview. Nothing leaves your Mac yet.</p>
+          </li>
+          <li>
+            <span class="pill pill--wait">CONNECTING…</span>
+            <h3 data-i18n="reh.2.h">Paste your key and go live.</h3>
+            <p data-i18n="reh.2.p">Copy the stream key from YouTube Studio once. OnAir keeps it in your Mac’s Keychain for next time.</p>
+          </li>
+          <li>
+            <span class="pill pill--live">● LIVE</span>
+            <h3 data-i18n="reh.3.h">Switch layouts. End when you’re done.</h3>
+            <p data-i18n="reh.3.p">Change layouts as you talk. End stream stops the broadcast; Back to rehearsal gets you ready for the next one.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band band--warm" id="sources">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow" data-i18n="nav.sources">Sources</p>
+          <h2 class="display display--md" data-i18n="src.title">Everything a<br>stream needs.</h2>
+          <div class="grid">
+            <article class="cell">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>
+              <h3 data-i18n="src.cam.h">Camera.</h3>
+              <p data-i18n="src.cam.p">The Mac’s own camera, a webcam or your iPhone with Continuity Camera.</p>
+            </article>
+            <article class="cell">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+              <h3 data-i18n="src.mic.h">Microphone.</h3>
+              <p data-i18n="src.mic.p">Any input your Mac knows: the built-in mic, AirPods or a USB microphone.</p>
+            </article>
+            <article class="cell">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+              <h3 data-i18n="src.scr.h">Screen or window.</h3>
+              <p data-i18n="src.scr.p">Choose with macOS’s own picker. Share one window and your notifications and other apps stay private.</p>
+            </article>
+            <article class="cell">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+              <h3 data-i18n="src.sys.h">Your Mac’s sound.</h3>
+              <p data-i18n="src.sys.p">The video or music you play goes into the stream, mixed with your voice. No extra audio drivers.</p>
+            </article>
+          </div>
+        </div>
+        <figure class="split__media is-photo">
+          <img src="media/studio.png" width="1600" height="848" alt="OnAir's Sources panel: camera, microphone, a shared Keynote window and audio levels" data-i18n-alt="alt.sources">
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="compare">
+      <div class="wrap">
+        <div class="split split--top">
+          <div>
+            <p class="eyebrow" data-i18n="cmp.eyebrow">Compare</p>
+            <h2 class="display display--md" data-i18n="cmp.title">Between StreamYard<br>and OBS.</h2>
+          </div>
+          <p class="lede lede--side" data-i18n="cmp.lede">StreamYard is easy, runs in the browser and charges a subscription for the good parts. OBS is free and can do anything, if you learn it. OnAir keeps StreamYard’s simplicity and runs on your own Mac.</p>
+        </div>
+        <div class="compare" role="region" aria-label="Comparison" data-i18n-aria-label="cmp.region" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col" class="us"><span class="who"><img class="logo" src="media/logo.svg" width="36" height="36" alt="">OnAir</span></th>
+                <th scope="col">StreamYard</th>
+                <th scope="col">OBS Studio</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row" data-i18n="cmp.price">Price</th>
+              <td class="us"><span data-i18n="cmp.price.o">Free</span></td>
+              <td><span data-i18n="cmp.price.s">Free plan with limits and its branding; paid plans are a subscription</span></td>
+              <td><span data-i18n="cmp.price.b">Free</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp.where">Where it runs</th>
+              <td class="us"><span data-i18n="cmp.where.o">A native Mac app</span></td>
+              <td><span data-i18n="cmp.where.s">In the browser; the stream goes out from their servers</span></td>
+              <td><span data-i18n="cmp.where.b">Windows, Mac and Linux</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp.setup">Getting started</th>
+              <td class="us"><span data-i18n="cmp.setup.o">Pick a layout, paste your YouTube key</span></td>
+              <td><span data-i18n="cmp.setup.s">Sign in and connect your channels</span></td>
+              <td><span data-i18n="cmp.setup.b">Build scenes and sources, tune the encoder</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp.guests">Remote guests</th>
+              <td class="us"><span class="no" aria-label="No" data-i18n-aria-label="cmp.no"></span> <span data-i18n="cmp.notyet">Not yet</span></td>
+              <td><span class="yes" aria-label="Yes" data-i18n-aria-label="cmp.yes"></span></td>
+              <td><span data-i18n="cmp.guests.b">Not built in</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp.multi">Several platforms at once</th>
+              <td class="us"><span data-i18n="cmp.multi.o">Not yet: YouTube only</span></td>
+              <td><span data-i18n="cmp.multi.s">On paid plans</span></td>
+              <td><span data-i18n="cmp.multi.b">With plugins</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="compat__title" data-i18n="lim.title">What it does not do, yet</h3>
+        <div class="cols compat">
+          <article class="col">
+            <h3 data-i18n="lim.yt.h">YouTube only</h3>
+            <p data-i18n="lim.yt.p">One destination, over RTMPS with your stream key. Twitch and streaming to several platforms at once come later.</p>
+          </article>
+          <article class="col">
+            <h3 data-i18n="lim.solo.h">Just you</h3>
+            <p data-i18n="lim.solo.p">No remote guests, overlays or vertical video in this first version. YouTube keeps the recording of your stream.</p>
+          </article>
+          <article class="col">
+            <h3 data-i18n="lim.mac.h">Mac only</h3>
+            <p data-i18n="lim.mac.p">OnAir is built on macOS’s own capture and encoding, which is why it is light. It needs macOS 14 Sonoma or later.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--soft" id="source">
+      <div class="wrap center">
+        <p class="eyebrow" data-i18n="src2.eyebrow">Under the hood</p>
+        <h2 class="display display--md" data-i18n="src2.title">Light, because<br>it’s native.</h2>
+        <p class="lede lede--narrow" data-i18n="src2.lede">Capture, mixing and H.264 encoding happen on your Mac with Apple’s frameworks and the hardware encoder. No browser tab and no server in the middle.</p>
+        <ul class="stack" aria-label="Built on" data-i18n-aria-label="aria.stack">
+          <li>Swift</li><li>SwiftUI</li><li>ScreenCaptureKit</li><li>AVFoundation</li><li>VideoToolbox</li><li>HaishinKit</li>
+        </ul>
+        <div class="cta">
+          <a class="btn btn--dark" href="https://github.com/McGregory99/onair" data-i18n="src2.gh">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="feedback">
+      <div class="wrap center">
+        <p class="eyebrow" data-i18n="fb.eyebrow">Early preview</p>
+        <h2 class="display display--md" data-i18n="fb.title">It’s free.<br>Tell us how it went.</h2>
+        <p class="lede lede--narrow" data-i18n="fb.lede">OnAir is new. If something breaks during a stream, or a layout is missing, open an issue: it shapes what comes next.</p>
+        <div class="cta">
+          <a class="btn btn--dark" href="https://github.com/McGregory99/onair/issues/new" data-i18n="fb.report">Report a problem</a>
+        </div>
+        <p class="note" data-i18n="fb.note">Uses a free GitHub account.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="brand brand--small"><img src="media/logo.svg" width="20" height="20" alt=""> OnAir</span>
+      <p><a href="https://github.com/McGregory99/onair">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="i18n-es.js?v=__V__"></script>
+  <script>
+    // Language: English is the page's own text; Spanish comes from i18n-es.js. The choice is kept
+    // per browser, and the first visit follows the browser's language.
+    const META = {
+      en: { title: document.title, description: document.querySelector('meta[name="description"]').content },
+      es: { title: 'OnAir — Emite en YouTube desde tu Mac',
+            description: 'OnAir emite tu cámara, tu pantalla y el sonido del Mac en YouTube, con diseños de un clic y un ensayo antes de salir en directo. Una app para Mac, sencilla y gratis.' },
+    };
+    const ATTRS = ['alt', 'aria-label'];
+    const EN = new Map();
+    for (const el of document.querySelectorAll('[data-i18n]')) EN.set(el, el.innerHTML);
+    for (const attr of ATTRS) {
+      for (const el of document.querySelectorAll(`[data-i18n-${attr}]`)) EN.set(`${attr}:${el.getAttribute(`data-i18n-${attr}`)}`, el.getAttribute(attr));
+    }
+    function setLanguage(lang) {
+      for (const el of document.querySelectorAll('[data-i18n]')) {
+        el.innerHTML = lang === 'es' ? ES[el.dataset.i18n] : EN.get(el);
+      }
+      for (const attr of ATTRS) {
+        for (const el of document.querySelectorAll(`[data-i18n-${attr}]`)) {
+          const key = el.getAttribute(`data-i18n-${attr}`);
+          el.setAttribute(attr, lang === 'es' ? ES[key] : EN.get(`${attr}:${key}`));
+        }
+      }
+      document.documentElement.lang = lang;
+      document.title = META[lang].title;
+      document.querySelector('meta[name="description"]').content = META[lang].description;
+      for (const b of document.querySelectorAll('[data-lang]')) b.setAttribute('aria-pressed', b.dataset.lang === lang);
+      try { localStorage.setItem('onair-lang', lang); } catch (_) {}
+    }
+    for (const b of document.querySelectorAll('[data-lang]')) b.addEventListener('click', () => setLanguage(b.dataset.lang));
+    let saved = null;
+    try { saved = localStorage.getItem('onair-lang'); } catch (_) {}
+    const browser = (navigator.language || '').toLowerCase().startsWith('es') ? 'es' : 'en';
+    const initial = saved === 'es' || saved === 'en' ? saved : browser;
+    if (initial !== 'en') setLanguage(initial);
+  </script>
+</body>
+</html>
